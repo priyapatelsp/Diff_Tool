@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LCS Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Longest Common Subsequence Calculator</h1>
+    <div class="input-container">
+        <input type="text" id="inputString1" placeholder="Enter first string">
+        <input type="text" id="inputString2" placeholder="Enter second string">
+        <button onclick="calculateLcs()">Calculate LCS</button>
+    </div>
+    <p id="resultLength"></p>
+    <p id="resultLcs"></p>
+</div>
+<script>
+    async function calculateLcs() {
+        const str1 = document.getElementById('inputString1').value;
+        const str2 = document.getElementById('inputString2').value;
+        if (!str1 || !str2) {
+            alert('Please enter both strings.');
+            return;
+        }
+        try {
+            const response = await fetch(`http://localhost:8080/lcs?str1=${encodeURIComponent(str1)}&str2=${encodeURIComponent(str2)}`);
+            const data = await response.json();
+            document.getElementById('resultLength').innerText = `LCS Length: ${data.length}`;
+            document.getElementById('resultLcs').innerText = `LCS String: ${data.lcsString}`;
+        } catch (error) {
+            console.error('Error fetching LCS:', error);
+        }
+    }
+</script>
+</body>
+</html>

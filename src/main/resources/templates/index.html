@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diff Tool : by Priya Patel</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Diff Tool</h1>
+        <h4>This is my own version of Diff tool which calculates Longest Common Subsequence</h4>
+    </div>
+</header>
+
+<div class="container">
+    <form action="/calculate" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Compare Strings</legend>
+            <label for="string1">String 1:</label>
+            <input type="text" id="string1" name="string1" placeholder="Enter first string">
+            <label for="string2">String 2:</label>
+            <input type="text" id="string2" name="string2" placeholder="Enter second string">
+        </fieldset>
+
+        <fieldset>
+            <legend>Compare Text Files</legend>
+            <label for="file1">File 1:</label>
+            <input type="file" id="file1" name="file1" accept=".txt">
+            <label for="file2">File 2:</label>
+            <input type="file" id="file2" name="file2" accept=".txt">
+        </fieldset>
+
+        <button type="submit">Calculate LCS</button>
+    </form>
+
+    <div id="result">
+        <h2>Result</h2>
+        <p th:text="'Length: ' + ${resultLength}"></p>
+        <p th:text="'LCS: ' + ${resultString}"></p>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <p>by @ <a href="https://www.linkedin.com/in/priyapatelsp/"> Priya Patel </a> </p>
+    </div>
+</footer>
+</body>
+</html>

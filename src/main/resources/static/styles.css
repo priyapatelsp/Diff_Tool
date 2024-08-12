@@ -1,78 +1,147 @@
-/* styles.css */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    color: #333;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f9; /* Light background for a clean look */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #071952; /* Dark blue-gray header */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 4px solid #2c3e50; /* Slightly darker border */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em; /* Professional heading size */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .container {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 2rem;
     width: 90%;
-    max-width: 600px;
-    text-align: center;
-    margin: 1rem;
-    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
 }
 
-h1 {
-    color: #2c3e50;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    font-weight: 600;
+form {
+    background: #fff; /* White background for form */
+    padding: 30px;
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+    border: 1px solid #ddd; /* Border color for form */
 }
 
-.input-container {
-    margin-bottom: 1.5rem;
+fieldset {
+    border: none;
+    margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: calc(50% - 20px);
-    padding: 0.75rem;
-    font-size: 1rem;
-    border: 2px solid #3498db;
-    border-radius: 6px;
-    margin: 0 10px 10px 0;
-    box-sizing: border-box;
+legend {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #3498db; /* Bright blue for accents */
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555; /* Slightly darker text for readability */
+}
+
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    font-size: 1em;
     transition: border-color 0.3s ease;
 }
 
-input[type="text"]:focus {
-    border-color: #2980b9;
+input[type="text"]:focus,
+input[type="file"]:focus {
+    border-color: #3498db; /* Blue border on focus */
     outline: none;
 }
 
 button {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    background: #3498db; /* Bright blue button */
     color: #fff;
-    background: #3498db;
     border: none;
-    border-radius: 6px;
+    padding: 15px 20px;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for button */
 }
 
 button:hover {
-    background: #2980b9;
+    background: #2980b9; /* Darker blue on hover */
     transform: scale(1.05);
 }
 
-button:active {
-    background: #1f60a8;
+.image-upload input[type="file"] {
+  background-image: url("your-custom-icon.png"); /* Replace with your icon */
+  background-size: 16px 16px;
+  background-position: center;
+  padding-left: 20px;
 }
 
-p#resultLength, p#resultLcs {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #27ae60;
-    margin-top: 1rem;
+
+
+#result {
+    background: #fff; /* White background for results */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result h2 {
+    margin-bottom: 10px;
+    color: #3498db; /* Bright blue for result headings */
+}
+
+#result p {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333; /* Dark text for result */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+footer p {
+    color: #777; /* Light gray for footer text */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header h1 {
+        font-size: 1.5em; /* Smaller heading on mobile */
+    }
 }
